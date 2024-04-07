@@ -23,9 +23,8 @@ const PlayersList = ({ matchId }) => {
       method: "GET",
       url: `https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/${matchId}`,
       headers: {
-        "X-RapidAPI-Key": "9b118b0c0dmsh14abcc471abbd5cp16b2e9jsn8fb2030c6ddf",
-        "X-RapidAPI-Host": "cricbuzz-cricket.p.rapidapi.com",
-      },
+        'X-RapidAPI-Key': 'f166f0dec8mshe529948fc37f64dp115f3fjsnfb7e7c026b67',
+        'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'},
     };
 
     try {
@@ -36,7 +35,7 @@ const PlayersList = ({ matchId }) => {
       setTeam2Players(team2.playerDetails);
       localStorage.setItem("myTeam", JSON.stringify(response.data));
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
