@@ -16,11 +16,10 @@ const Matches = () => {
       }
       const options = {
         method: "GET",
-        url: "https://cricbuzz-cricket.p.rapidapi.com/matches/v1/upcoming",
-        headers: {
-          "X-RapidAPI-Key":
-            "9b118b0c0dmsh14abcc471abbd5cp16b2e9jsn8fb2030c6ddf",
-          "X-RapidAPI-Host": "cricbuzz-cricket.p.rapidapi.com",
+        url: 'https://cricbuzz-cricket.p.rapidapi.com/matches/v1/recent',
+  headers: {
+    'X-RapidAPI-Key': 'f166f0dec8mshe529948fc37f64dp115f3fjsnfb7e7c026b67',
+    'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
         },
       };
 

@@ -1,13 +1,56 @@
+import '@rainbow-me/rainbowkit/styles.css';
+import './polyfills';
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { WagmiProvider } from 'wagmi';
+import {
+  arbitrum,
+  base,
+  mainnet,
+  optimism,
+  polygon,
+  polygonMumbai,
+  sepolia,
+  xdcTestnet,
+} from 'wagmi/chains';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import App from './App';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const config = getDefaultConfig({
+  appName: 'RainbowKit demo',
+  projectId: 'YOUR_PROJECT_ID',
+  chains: [
+    mainnet,
+    polygon,
+    polygonMumbai,
+    optimism,
+    arbitrum,
+    base,
+    sepolia,
+    xdcTestnet,
+    ...(process.env.REACT_APP_ENABLE_TESTNETS === 'true' ? [sepolia] : []),
+  ],
+});
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+);
+
+const queryClient = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <App />
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider>
+          <App />
+        </RainbowKitProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
   </React.StrictMode>
 );
 

@@ -1,38 +1,44 @@
 .App {
-  text-align: center;
+  background-image: url("assets/bg-v.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+/* .App {
+  background-image: url("https://assets.gqindia.com/photos/5cdc3848700a7731d1aa22f6/16:9/w_1920,c_limit/stadium_0.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+} */
+.App1 {
+  background-image: url("assets/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: max-content;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App2 {
+  background-image: url("assets/bg-3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.gradient-container {
+  width: 100vw;
+  background: linear-gradient(-90deg, #ff5e5e, #ffa2a2, #ffffff, #ffa2a2, #ff5e5e);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  50% {
+    background-position: 100% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    background-position: 0% 50%;
   }
 }
